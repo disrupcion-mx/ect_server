@@ -11,7 +11,7 @@ app.get("/descarga/:revision", (req, res) => {
 });
 
 app.get("/metodologia", (req, res) => {
-    const fileName = "metodologia_ect.pdf";
+    const fileName = "metodologia_ect_mx.pdf";
     res.download(`${__dirname}/downloads/${fileName}`, fileName);
 });
 
