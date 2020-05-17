@@ -3,9 +3,11 @@ const app = express();
 
 app.use(express.static(`${__dirname}/build`));
 
-app.get("/descarga", (req, res) => {
+app.get("/descarga/:revision", (req, res) => {
+    const { revision } = req.params;
+    if(!revision || isNaN(revision)) return res.sendStatus(400);
     const fileName = "IECTMX_RANKING_V1.0_MAYO9.xlsx";
-    res.download(`${__dirname}/downloads/${fileName}`, fileName);
+    res.download(`${__dirname}/downloads/${revision}/${fileName}`, fileName);
 });
 
 app.get("/metodologia", (req, res) => {
