@@ -6,8 +6,8 @@ app.use(express.static(`${__dirname}/build`));
 app.get("/descarga/:revision", (req, res) => {
     const { revision } = req.params;
     if(!revision || isNaN(revision)) return res.sendStatus(400);
-    const fileName = "IECTMX_RANKING_V1.0_MAYO9.xlsx";
-    res.download(`${__dirname}/downloads/${revision}/${fileName}`, fileName);
+    const fileName = `IECTMX_RANKING_V${revision}.xlsx`;
+    res.download(`${__dirname}/downloads/${fileName}`, fileName);
 });
 
 app.get("/metodologia", (req, res) => {
