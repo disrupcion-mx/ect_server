@@ -11,7 +11,7 @@ app.get("/descarga/:revision", (req, res) => {
 });
 
 app.get("/gastos", (req, res) => {
-    const fileName = `IECT_GASTOS_V1.xlsx`;
+    const fileName = `IECTMX_GASTOS_V1.xlsx`;
     res.download(`${__dirname}/downloads/${fileName}`, fileName);
 });
 
