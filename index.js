@@ -10,6 +10,11 @@ app.get("/descarga/:revision", (req, res) => {
     res.download(`${__dirname}/downloads/${fileName}`, fileName);
 });
 
+app.get("/gastos", (req, res) => {
+    const fileName = `IECT_GASTOS_V1.xlsx`;
+    res.download(`${__dirname}/downloads/${fileName}`, fileName);
+});
+
 app.get("/metodologia", (req, res) => {
     const fileName = "metodologia_ect_mx.pdf";
     res.download(`${__dirname}/downloads/${fileName}`, fileName);
