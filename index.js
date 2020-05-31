@@ -20,6 +20,17 @@ app.get("/metodologia", (req, res) => {
     res.download(`${__dirname}/downloads/${fileName}`, fileName);
 });
 
+app.get("/tabla/texto", (req, res) => {
+    const fileName = "propuesta_tablagasto_covid19NL.pdf";
+    res.download(`${__dirname}/downloads/${fileName}`, fileName);
+});
+
+app.get("/tabla/excell", (req, res) => {
+    const fileName = "IECT_FORMATO_GASTO_MAYO292020.xlsx";
+    res.download(`${__dirname}/downloads/${fileName}`, fileName);
+});
+
+
 app.get("/*", (req, res) => {
     res.sendFile(`${__dirname}/build/index.html`);
 });
